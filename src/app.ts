@@ -25,7 +25,10 @@ const app = express();
 
 // Middleware CORS amélioré
 app.use(cors({
-    origin: ["http://localhost:3000", "https://dr-dipama-front.onrender.com"],
+    origin: [
+        "http://localhost:3000",
+        "https://dipamaweb.netlify.app"
+    ],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"],
