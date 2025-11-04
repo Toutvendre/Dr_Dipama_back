@@ -32,6 +32,5 @@ RUN npm install --omit=dev
 # Exposer le port (Render choisira automatiquement PORT)
 EXPOSE 8080
 
-# Étape supplémentaire : lancer le seed admin avant le serveur
-# Astuce : on le fait dans le CMD, juste avant de démarrer Node
-CMD npm run seed:admin && node dist/index.js
+# Lancer le seed admin compilé puis le serveur
+CMD npm run seed:adminprod && node dist/index.js
