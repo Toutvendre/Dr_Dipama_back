@@ -7,7 +7,7 @@ WORKDIR /app
 # Copier les fichiers de configuration
 COPY package*.json tsconfig.json ./
 
-# Installer les dépendances (production + dev, pour build)
+# Installer les dépendances (production + dev)
 RUN npm install
 
 # Copier le code source
@@ -22,15 +22,16 @@ FROM node:22-alpine AS production
 # Répertoire de travail
 WORKDIR /app
 
-# Copier uniquement les fichiers nécessaires depuis le builder
+# Copier les fichiers nécessaires depuis le builder
 COPY --from=builder /app/package*.json ./
 COPY --from=builder /app/dist ./dist
 
 # Installer uniquement les dépendances de production
 RUN npm install --omit=dev
 
-# Exposer le port (Render utilisera automatiquement PORT=10000, mais 8080 c’est bien)
+# Exposer le port (Render choisira automatiquement PORT)
 EXPOSE 8080
 
-# Lancer le serveur Node (fichier compilé)
-CMD ["node", "dist/index.js"]
+# Étape supplémentaire : lancer le seed admin avant le serveur
+# Astuce : on le fait dans le CMD, juste avant de démarrer Node
+CMD npm run seed:admin && node dist/index.js
