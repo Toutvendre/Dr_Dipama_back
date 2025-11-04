@@ -17,8 +17,6 @@ import rendezvousRoutes from "./routes/rendezvous.routes";
 import contributionRoutes from "./routes/contribution.routes";
 import parcoursRoutes from "./routes/parcours.routes";
 
-
-
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -27,7 +25,7 @@ const app = express();
 
 // Middleware CORS amélioré
 app.use(cors({
-    origin: "https://dipamaweb.netlify.app/",
+    origin: ["http://localhost:3000", "https://dr-dipama-front.onrender.com"],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"],
