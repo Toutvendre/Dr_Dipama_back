@@ -29,6 +29,9 @@ export class Social {
     @Column({ nullable: true })
     whatsapp?: string;
 
+    @Column({ nullable: true })
+    bluesky?: string;
+
     @CreateDateColumn()
     createdAt!: Date;
 
