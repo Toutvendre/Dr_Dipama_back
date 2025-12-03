@@ -32,6 +32,16 @@ export class Social {
     @Column({ nullable: true })
     bluesky?: string;
 
+
+    @Column({ nullable: true })
+    twitter?: string;
+
+    @Column({ nullable: true })
+    threads?: string;
+
+    @Column({ nullable: true })
+    pinterest?: string;
+
     @CreateDateColumn()
     createdAt!: Date;
 

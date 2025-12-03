@@ -14,7 +14,8 @@ import socialRoutes from "./routes/social.routes";
 import realisationRoutes from "./routes/realisation.routes";
 import eventRoutes from "./routes/event.routes";
 import rendezvousRoutes from "./routes/rendezvous.routes";
-import contributionRoutes from "./routes/contribution.routes";
+import conceptRoutes from "./routes/concept.routes";
+import membreRoutes from "./routes/membre.routes";
 import parcoursRoutes from "./routes/parcours.routes";
 
 import dotenv from "dotenv";
@@ -52,7 +53,8 @@ app.use("/api/social", socialRoutes);
 app.use("/api/realisations", realisationRoutes);
 app.use("/api/events", eventRoutes);
 app.use("/api/rendezvous", rendezvousRoutes);
-app.use("/api/contributions", contributionRoutes);
+app.use("/api/concept", conceptRoutes);
+app.use("/api/membres", membreRoutes);
 app.use("/api/parcours", parcoursRoutes);
 
 

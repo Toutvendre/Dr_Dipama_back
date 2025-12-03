@@ -11,7 +11,9 @@ import { Social } from "../entities/Social";
 import { Realisation } from "../entities/Realisation";
 import { Event } from "../entities/Event";
 import { RendezVous } from "../entities/RendezVous";
-import { Contribution } from "../entities/Contribution";
+import { Membre } from "../entities/Membre";
+import { Concept } from "../entities/Concept";
+
 import { Parcours } from "../entities/Parcours";
 import dotenv from "dotenv";
 
@@ -27,5 +29,5 @@ export const AppDataSource = new DataSource({
     database: process.env.DB_NAME,
     synchronize: true,
     logging: false,
-    entities: [User, Resource, Media, LiveSession, Newsletter, Actualite, Commentaire, Social, Realisation, Event, RendezVous, Contribution, Parcours],
+    entities: [User, Resource, Media, LiveSession, Newsletter, Actualite, Commentaire, Social, Realisation, Event, RendezVous, Membre, Concept, Parcours],
 });
